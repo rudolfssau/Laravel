@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
-  </head>
-  <body>
-  </body>
+</head>
+<body>
+    @yield('content')
+    @yield('scripts')
+</body>
 </html>
 
