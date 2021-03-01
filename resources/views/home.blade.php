@@ -1,12 +1,7 @@
 @extends('includes.master')
 
 @section('content')
-@foreach($users as $user)
-    <ul>
-    {{$user->fname}}
-    {{$user->lname}}
-    </ul>
-@endforeach
+{{$users->fname}} {{$users->lname}}
 @endsection
 
 @section('scripts')

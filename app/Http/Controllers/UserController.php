@@ -7,9 +7,17 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function showUsers()
+    public function showUsersId($id)
     {
-        $users = User::get();
+        $users = User::findOrFail($id);
         return view('home', compact('users'));
-     }
+    }
+    public function createUser()
+    {
+        return view('createUser');
+    }
+    public function saveUser(Request $request)
+    {
+        dd('test');
+    }
 }

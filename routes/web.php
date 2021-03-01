@@ -14,4 +14,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [UserController::class, 'showUsers']);
+Route::get('/users/user/{id}', [UserController::class, 'showUsersId']);
+Route::get('/users/create', [UserController::class, 'createUser']);
+Route::post('/users/create', [UserController::class, 'saveUser'])->name('createUser');
