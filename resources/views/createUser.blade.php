@@ -1,5 +1,7 @@
 @extends('includes.master')
 
+@include('includes.validation')
+
 @section('content')
     <form method="post" action="{{route('createUser')}}">
         @csrf

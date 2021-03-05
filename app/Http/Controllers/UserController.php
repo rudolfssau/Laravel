@@ -18,6 +18,12 @@ class UserController extends Controller
     }
     public function saveUser(Request $request)
     {
-        dd('test');
+        $user = new User;
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        return redirect()->back()->with('success', 'Thank you for registering!');
     }
 }
