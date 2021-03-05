@@ -18,6 +18,12 @@ class UserController extends Controller
     }
     public function saveUser(Request $request)
     {
+        $request -> validate([
+            'fname' => 'required',
+            'lname' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
         $user = new User;
         $user->fname = $request->fname;
         $user->lname = $request->lname;
