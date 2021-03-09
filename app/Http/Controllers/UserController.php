@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\CreateUsers;
 
 class UserController extends Controller
 {
@@ -16,14 +17,8 @@ class UserController extends Controller
     {
         return view('createUser');
     }
-    public function saveUser(Request $request)
+    public function saveUser(CreateUsers $request)
     {
-        $request -> validate([
-            'fname' => 'required',
-            'lname' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
         $user = new User;
         $user->fname = $request->fname;
         $user->lname = $request->lname;
@@ -31,5 +26,9 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->save();
         return redirect()->back()->with('success', 'Thank you for registering!');
+    }
+    public function allUsers()
+    {
+        dd('hello');
     }
 }
