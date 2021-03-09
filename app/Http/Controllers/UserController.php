@@ -29,6 +29,7 @@ class UserController extends Controller
     }
     public function allUsers()
     {
-        dd('hello');
+        $users = User::paginate(5);
+        return view('allusers', compact('users'));
     }
 }
