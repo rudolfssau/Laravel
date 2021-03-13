@@ -2,16 +2,6 @@
 
 @include('includes.validation')
 
-@if($errors->any())
-    <ul>
-    @foreach($errors->all() as $error)
-        <li>
-        {{$error}}
-        </li>
-    @endforeach
-    </ul>
-@endif
-
 @section('content')
     <form method="post" action="{{route('createUser')}}">
         @csrf

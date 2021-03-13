@@ -4,7 +4,9 @@
 
 <h1>{{$user->fname}} {{$user->lname}}</h1>
 
-<form method="post" action="">
+@include('includes.validation')
+
+<form method="post" action="{{route('updateUser', $user->id)}}">
     @csrf
     <input type="text" name="fname" placeholder="First Name" value="{{$user->fname}}" required><br>
     <input type="text" name="lname" placeholder="Last Name" value="{{$user->lname}}" required><br>
