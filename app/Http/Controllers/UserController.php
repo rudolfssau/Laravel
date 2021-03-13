@@ -32,4 +32,9 @@ class UserController extends Controller
         $users = User::paginate(5);
         return view('allusers', compact('users'));
     }
+    public function viewUser($id)
+    {
+        $user = User::findOrFail($id);
+        return view('viewUser', compact('user'));
+    }
 }
