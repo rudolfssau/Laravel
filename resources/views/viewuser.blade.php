@@ -1,10 +1,10 @@
 @extends('includes.master')
 
+@include('includes.validation')
+
 @section('content')
 
 <h1>{{$user->fname}} {{$user->lname}}</h1>
-
-@include('includes.validation')
 
 <form method="post" action="{{route('updateUser', $user->id)}}">
     @csrf

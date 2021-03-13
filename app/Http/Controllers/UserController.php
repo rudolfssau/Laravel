@@ -45,6 +45,10 @@ class UserController extends Controller
         $user->lname = $request->lname;
         $user->email = $request->email;
         $user->password = $request->password;
+        $verifyUser = VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => str_random(40)
+        ]);
         $user->save();
         return redirect()->back()->with('success', 'Changes saved!');
     }
