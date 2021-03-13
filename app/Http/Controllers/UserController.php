@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\CreateUsers;
+use App\Http\Requests\UpdateUser;
 
 class UserController extends Controller
 {
@@ -36,5 +37,15 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         return view('viewUser', compact('user'));
+    }
+    public function updateUser(UpdateUser $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        return redirect()->back()->with('success', 'Changes saved!');
     }
 }
