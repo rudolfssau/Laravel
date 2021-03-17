@@ -26,7 +26,7 @@ class UpdateUser extends FormRequest
         return [
             'fname' => 'required',
             'lname' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email,' . request()->id,
             'password' => 'required',
         ];
     }
