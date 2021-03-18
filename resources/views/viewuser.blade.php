@@ -15,6 +15,12 @@
     <button type="submit">Submit Changes</button>
 </form>
 
+<form action="{{route('deleteUser', $user->id)}}" method="post">
+    @csrf
+    <input type="text" name="userid" placeholder="Enter The User ID">
+    <button type="submit">Delete User</button>
+</form>
+
 @endsection
 
 @section('scripts')

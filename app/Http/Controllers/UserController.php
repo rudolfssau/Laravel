@@ -48,4 +48,17 @@ class UserController extends Controller
         $user->save();
         return redirect()->back()->with('success', 'Changes saved!');
     }
+    public function deleteUser(Request $request, $id)
+    {
+        $request->validate([
+            'userid' => 'required',
+        ]);
+        if($id == $request->userid)
+        {
+            $user = User::findOrFail($id);
+            $user->delete();
+            return redirect('/users/');
+        }
+        return redirect()->back()->with('failed', 'Please enter a valid ID, user not deleted!');
+    }
 }

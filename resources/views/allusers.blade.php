@@ -5,9 +5,10 @@
     <table>
         <thead>
             <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Email</td>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,9 @@
                 </td>
                 <td>
                     {{$user->email}}
+                </td>
+                <td>
+                    <a href="{{route('viewuser', $user->id)}}">View User</a>
                 </td>
             </tr>
         @endforeach
