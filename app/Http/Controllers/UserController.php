@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Http\Requests\CreateUsers;
 use App\Http\Requests\UpdateUser;
@@ -24,7 +25,7 @@ class UserController extends Controller
         $user->fname = $request->fname;
         $user->lname = $request->lname;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->save();
         return redirect()->back()->with('success', 'Thank you for registering!');
     }
