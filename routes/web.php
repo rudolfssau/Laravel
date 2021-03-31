@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,4 @@ Route::get('/admin/users/view/{id}', [UserController::class, 'viewUser'])->name(
 Route::post('/admin/user/update/{id}', [UserController::class, 'updateUser'])->name('updateUser');
 Route::post('/admin/users/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
-Route::get('/login', [AuthController::class])->name('login')
+Route::get('/login', [AuthController::class, 'login'])->name('login');
