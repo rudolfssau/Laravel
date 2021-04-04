@@ -24,3 +24,4 @@ Route::post('/admin/user/update/{id}', [UserController::class, 'updateUser'])->n
 Route::post('/admin/users/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
