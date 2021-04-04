@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -17,9 +18,13 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
-        dd(Auth::attempt([
+        if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password
-        ]));
+        ]))
+        {
+            return redirect()->intended(route('allUsers'));
+        }
+        return redirect()->back()->with('danger', 'Login failed, incorrect details');
     }
 }
