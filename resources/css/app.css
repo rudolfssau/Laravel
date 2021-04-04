@@ -1,18 +1,61 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Poppins', sans-serif;
 }
 #form-signin-container {
+    text-align: center!important;
     display: flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
+    line-height: 1.5;
 }
 .form-signin-h1 {
+    margin-bottom: 1rem!important;
     font-size: 1.75rem;
     font-weight: 400!important;
 }
 .form-signin {
     display: flex;
     flex-flow: column wrap;
+}
+#inputEmail, #inputPassword {
+    margin: 4px
+}
+#inputPassword {
+    margin-bottom: 10px;
+}
+.formControl {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+#formcopyrightText {
+    margin-top: 3rem!important;
+}
+#forumSignInbutton {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#forumRememberMe {
+    margin-bottom: 1rem!important;
+}
+#forumRememberMeCheckbox {
+
 }
