@@ -25,6 +25,7 @@
 }
 #inputPassword {
     margin-bottom: 10px;
+    -webkit-text-security: disc !important;
 }
 .formControl {
     position: relative;
