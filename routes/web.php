@@ -16,7 +16,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/admin/users/user/{id}', [UserController::class, 'showUsersId']);
-Route::get('/admin/users/', [UserController::class, 'allUsers']);
+Route::get('/admin/users/', [UserController::class, 'allUsers'])->name('allUsers');
 Route::get('/admin/users/create', [UserController::class, 'createUser']);
 Route::post('/admin/users/create', [UserController::class, 'saveUser'])->name('createUser');
 Route::get('/admin/users/view/{id}', [UserController::class, 'viewUser'])->name('viewuser');
