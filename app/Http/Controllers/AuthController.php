@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
 {
@@ -22,7 +23,7 @@ class AuthController extends Controller
             'password' => $request->password
         ]));
         {
-            return redirect()->route('allUsers');
+            return Redirect::to('/admin/users');
         }
         return redirect()->back()->with('danger', 'Login failed, incorrect details');
     }
