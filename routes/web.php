@@ -23,5 +23,5 @@ Route::get('/admin/users/view/{id}', [UserController::class, 'viewUser'])->name(
 Route::post('/admin/user/update/{id}', [UserController::class, 'updateUser'])->name('updateUser');
 Route::post('/admin/users/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
-Route::get('/user/login', [AuthController::class, 'login'])->name('login');
-Route::post('/user/signin', [AuthController::class, 'signin'])->name('signin');
+Route::get('/public/user/login', [AuthController::class, 'login'])->name('login');
+Route::post('/public/user/login', [AuthController::class, 'signin'])->name('signin');

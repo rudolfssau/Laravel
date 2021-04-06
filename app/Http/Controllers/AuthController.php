@@ -23,7 +23,8 @@ class AuthController extends Controller
             'password' => $request->password
         ]));
         {
-            return Redirect::to('/admin/users');
+            return redirect()->intended(route('allUsers'));
+            dd("success");
         }
         return redirect()->back()->with('danger', 'Login failed, incorrect details');
     }
