@@ -25,6 +25,6 @@ class AuthController extends Controller
         {
             return redirect()->intended(route('allUsers'));
         }
-        return redirect()->back()->with('danger', "The login information was incorrect!");
+        return redirect()->back()->with('failed', "The login information was incorrect!");
     }
 }
