@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+<form method="post" action="{{route('logout')}}">
+    @csrf
+    <button type="submit">Logout</button>
+</form>
     @yield('content')
     @yield('scripts')
 <script src="{{mix('js/app.js')}}"></script>

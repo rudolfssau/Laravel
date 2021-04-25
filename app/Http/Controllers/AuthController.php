@@ -27,4 +27,10 @@ class AuthController extends Controller
         }
         return redirect()->back()->with('failed', "The login information was incorrect!");
     }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->back();
+    }
+
 }
