@@ -18,15 +18,13 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
-        if (!Auth::attempt([
+        if(Auth::attempt([
             'email' => $request->email,
             'password' => $request->password
-        ]));
+        ]))
         {
-//            return redirect(route('allUsers'));
-            dd("success");
+            return redirect()->intended(route('allUsers'));
         }
-        dd('failed');
-//        return redirect()->back()->with('danger', 'Login failed, incorrect details');
+        return redirect()->back()->with('danger', "The login information was incorrect!");
     }
 }
