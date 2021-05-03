@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::post('/admin/users/delete/{id}', [UserController::class, 'deleteUser'])->
 Route::get('/public/user/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/public/user/login', [AuthController::class, 'signin'])->name('signin');
 Route::post('/public/user/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/public/user/{id}/home', [PublicController::class, 'home'])->name('home');
